@@ -67,6 +67,9 @@ h4 {
   font-size: 0.875rem;
 }
 
+#title {
+  margin-top: 1rem;
+}
 
 .section-center {
   width: 90vw;
