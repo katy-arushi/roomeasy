@@ -7,7 +7,7 @@ const fs = require('fs');
 
 const path = require("path");
  
-var Sequelize = require('sequelize-cockroachdb');
+//var Sequelize = require('sequelize-cockroachdb');
 // Connect to CockroachDB through Sequelize
 const sequelize = new Sequelize({
   dialect: "postgres",
@@ -24,7 +24,8 @@ const sequelize = new Sequelize({
               .toString()
     },
     logging: false, 
-  });
+  }
+});
 
 const DataTypes = Sequelize.DataTypes;
 

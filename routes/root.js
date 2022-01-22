@@ -16,7 +16,7 @@ router.get('/', function(req, res, next) {
 router.get('/createUser', function(req, res, next) {
   //res.type("text/plain");
   //res.send('Node.js Sequelize test server');
-  res.render('pages/createUser');
+  res.render('/createUser');
 });
 
 router.get('/ping', function (req, res, next) {
@@ -24,7 +24,7 @@ router.get('/ping', function (req, res, next) {
   res.send('node/sequelize');
 });
 
-router.get('/userList', async (req, res, next) => {
+router.get('/displayUser', async (req, res, next) => {
   //res.type("text/plain");
   //res.send('Node.js Sequelize test server');
   try {
@@ -32,7 +32,7 @@ router.get('/userList', async (req, res, next) => {
     const users = await User.findAll();
     console.log(users.every(user => user instanceof User)); // true
     console.log("All client:", JSON.stringify(users, null, 2));
-    res.render('pages/displayUser', { users });
+    res.render('/displayUser', { users });
   } catch (e) {
     next(e);
   }
