@@ -12,12 +12,18 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+
+
 app.listen(port, function () {
   console.log("Runnning on " + port);
 });
 
 app.get('/', (req, res) => {
   res.render("homepage");
+});
+
+app.get('/profile', function(req, res) {
+  res.render('profile');
 });
 
 module.exports = app;
