@@ -31,8 +31,8 @@
 
 body {
   font-family: var(--ff-secondary);
-  background: var(--clr-grey-10);
-  color: var(--clr-grey-1);
+  background: #6BBCC7;
+  background-image: url("https://www.transparenttextures.com/patterns/cartographer.png");  color: var(--clr-grey-1);
   line-height: 1.5;
   font-size: 0.875rem;
 }
@@ -155,7 +155,7 @@ main {
   font-size: 0.85rem;
 }
 .submit-btn:hover {
-  background: var(--clr-primary-1);
+  background: #6BBCC7;
   color: var(--clr-white);
 }
 
