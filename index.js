@@ -3,7 +3,6 @@ const app = express();
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const logger = require("morgan");
-
 const port = process.env.PORT || 3001;
 
 app.set("view engine", "ejs");

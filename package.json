@@ -24,7 +24,6 @@
     "express": "^4.17.2",
     "morgan": "^1.10.0",
     "node-sass-middleware": "^0.11.0",
-    "nodemon": "^2.0.15",
-    "sass": "^1.49.0"
+    "nodemon": "^2.0.15"
   }
 }
