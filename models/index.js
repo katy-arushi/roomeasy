@@ -2,15 +2,30 @@
 
 var Sequelize = require('sequelize-cockroachdb');
 
-process.env.ADDR = "postgresql://pripri99:YqmXHAU05AOukdNdnSKfyg@free-tier11.gcp-us-east1.cockroachlabs.cloud:26257/defaultdb?sslmode=disable"
+// For secure connection to CockroachDB
+const fs = require('fs');
 
-if (process.env.ADDR === undefined) {
-  throw new Error("ADDR (database URL) must be specified.");
-}
-
-var sequelize = new Sequelize(process.env.ADDR, {
-  dialectOptions: {cockroachdbTelemetryDisabled : true}
+const path = require("path");
+ 
+// Connect to CockroachDB through Sequelize
+var sequelize = new Sequelize({
+  dialect: "postgres",
+  username: "pripri99",
+  password: "YqmXHAU05AOukdNdnSKfyg",
+  host: "free-tier11.gcp-us-east1.cockroachlabs.cloud",
+  port: 26257,
+  database: "scared-to-compile-18.defaultdb",
+  dialectOptions: {
+    ssl: {
+      
+      //For secure connection:
+      ca: fs.readFileSync(path.resolve(__dirname, "../certs/root.crt"))
+              .toString()
+    },
+  },
+  logging: false, 
 });
+
 var DataTypes = Sequelize.DataTypes;
 
 if (!Sequelize.supportsCockroachDB) {
@@ -76,5 +91,5 @@ module.exports.productToJSON = function(product) {
 };
 
 module.exports.sequelize = sequelize;
-module.exports.Sequelize = Sequelize;
+//module.exports.Sequelize = Sequelize;
 
