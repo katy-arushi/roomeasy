@@ -17,7 +17,7 @@ app.listen(port, function () {
 });
 
 app.get('/', (req, res) => {
-  res.send('Hello World!');
+  res.render("homepage");
 });
 
 module.exports = app;
