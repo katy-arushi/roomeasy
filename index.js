@@ -6,6 +6,7 @@ const logger = require("morgan");
 
 const port = process.env.PORT || 3001;
 
+app.set("view engine", "ejs");
 app.use(logger('dev'));
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
