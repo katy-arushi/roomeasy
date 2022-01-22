@@ -1,9 +1,9 @@
-var express = require('express');
-var bodyParser = require('body-parser');
-var path = require('path');
-var models = require('./models');
+const express = require('express');
+const bodyParser = require('body-parser');
+const path = require('path');
+const models = require('./models');
 
-var app = express();
+const app = express();
 
 // View engine setup
 app.set('views', path.join(__dirname, 'views'));
