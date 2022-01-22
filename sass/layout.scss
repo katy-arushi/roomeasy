@@ -1,0 +1,27 @@
+nav {
+    background: var(--clr-white);
+    height: 3rem;
+    display: grid;
+    align-items: center;
+    box-shadow: var(--dark-shadow);
+}
+
+.nav-bar {
+    color:palevioletred;
+    width: 90vw;
+    max-width: var(--fixed-width);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .nav-bar h4 {
+    margin-bottom: 0;
+    color: var(--clr-primary-5);
+  }
+
+  main {
+    min-height: calc(50vh - 3rem);
+    display: grid;
+    place-items: center;
+  }
