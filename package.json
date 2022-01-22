@@ -2,7 +2,7 @@
   "name": "roommate-matcher",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "./node_modules/.bin/nodemon -L index.js"
@@ -24,6 +24,8 @@
     "express": "^4.17.2",
     "morgan": "^1.10.0",
     "node-sass-middleware": "^0.11.0",
-    "nodemon": "^2.0.15"
+    "nodemon": "^2.0.15",
+    "sequelize": "^6.14.0",
+    "sequelize-cockroachdb": "^6.0.5"
   }
 }
