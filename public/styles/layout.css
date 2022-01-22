@@ -43,6 +43,12 @@ a:link {
   text-decoration: none;
 }
 
+a:visited {
+  color: white;
+  background-color: transparent;
+  text-decoration: none;
+}
+
 
 h1,
 h2,
@@ -70,6 +76,29 @@ h4 {
 #title {
   margin-top: 1rem;
 }
+
+
+
+form {
+  margin-left: 10px;
+
+  text-align: center;
+}
+
+p {
+  color: var(--clr-primary-2);
+  font-family: var(--ff-primary);
+  font-size: 3rem;
+  text-align: center;
+}
+
+label {
+  color: var(--clr-primary-2);
+  font-family: var(--ff-primary);
+  font-size: 3rem;
+}
+
+
 
 .section-center {
   width: 90vw;
@@ -130,6 +159,76 @@ h4 {
 .submit-btn:hover {
   background: #6BBCC7;
   color: var(--clr-white);
+}
+
+.q2btn {
+  margin: auto;
+  background: var(--clr-primary-2);
+  border-color: transparent;
+  flex: 0 0 5rem;
+  display: grid;
+  align-items: center;
+  padding: 0.25rem;
+  text-transform: capitalize;
+  letter-spacing: 2px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  cursor: pointer;
+  content: var(--clr-primary-1);
+  transition: var(--transition);
+  font-size: 0.85rem;
+}
+.q2btn:hover {
+  background: #6BBCC7;
+  color: var(--clr-white);
+}
+.prevbtn {
+
+  background: var(--clr-primary-2);
+  border-color: transparent;
+
+
+
+  padding: 0.25rem;
+  text-transform: capitalize;
+  letter-spacing: 2px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  cursor: pointer;
+  content: var(--clr-primary-1);
+  transition: var(--transition);
+  font-size: 0.85rem;
+}
+
+.nextbtn {
+  margin: auto;
+  background: var(--clr-primary-2);
+  border-color: transparent;
+
+
+  padding: 0.25rem;
+  text-transform: capitalize;
+  letter-spacing: 2px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  cursor: pointer;
+  content: var(--clr-primary-1);
+  transition: var(--transition);
+  font-size: 0.85rem;
+}
+
+.nextbtn:hover {
+  background: #6BBCC7;
+  color: var(--clr-white);
+}
+
+.prevbtn:hover {
+  background: #6BBCC7;
+  color: var(--clr-white);
+}
+
+.buttons {
+  text-align: center;
 }
 
 

@@ -22,8 +22,15 @@ app.get('/', (req, res) => {
   res.render("homepage");
 });
 
-app.get('/profile', function(req, res) {
-  res.render('profile');
+app.get('/q1', function(req, res) {
+  res.render('q1');
 });
 
+app.get('/q2', function(req, res) {
+  res.render('q2');
+});
+
+app.get('/q3', function(req, res) {
+  res.render('q3');
+});
 module.exports = app;
