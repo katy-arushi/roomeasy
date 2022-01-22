@@ -1,0 +1,19 @@
+<div class="nav-bar">
+    <h1>User List</h1>
+  </div>
+  
+  <div>
+  
+      <ul class="users">
+        <% for ( let user of users ) { %>
+          <li class="user">
+            <span><%= user.name %>
+            <span><%= user.time %>
+          </li>
+        <% } %>
+      </ul>
+  </div>
+
+  <div> 
+    <h1><a href="/createUser"> Create a user   </a></h1>
+  </div>

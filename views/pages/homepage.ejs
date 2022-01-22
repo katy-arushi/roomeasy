@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Document</title>
+  <%- include('../partials/_head') %>
+</head>
+<body>
+    <section class="section-center">
+        <div class="form">
+          <h3 id="title">room easy</h3>
+          <div class="form-control">
+            <label type="text" for="residence"></label>
+            <select name="rez" id="residence">
+                <option value="new-rez" class="option">New Rez</option>
+                <option value="rvc" class="option">RVC</option>
+                <option value="solin-hall" class="option">Solin Hall</option>
+                <option value="c4" class="option">C4</option>
+                <option value="upper-rez" class="option">Upper Rez</option>
+            </select>
+            <button type="submit" class="submit-btn"><a href="/profile">submit</a></button>
+          </div>
+        </div>
+    </nav>
+    <main>
+        <div class="container">
+            <tr>
+                <td class="residence">
+                    Choose your residence
+                </td>
+                <td>
+                    <select>
+                        <option>--Your residence--</option>
+                        <option>Rez0</option>
+                        <option>Rez1</option>
+                        <option>Rez2</option>
+                        <option>Rez3</option>
+                        <option>Rez4</option>
+                        <option>Rez5</option>
+                    </select>
+                </td>
+            </tr>
+        </div>
+    </main>
+
+    <div> 
+        <h1><a href="/createUser"> Create a user   </a></h1>
+        <h1><a href="/userList"> Go to user list   </a></h1>
+    </div>
+
+</body>
+</html>
