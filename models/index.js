@@ -1,6 +1,6 @@
 'use strict';
 
-var Sequelize = require('sequelize-cockroachdb');
+const Sequelize = require('sequelize-cockroachdb');
 
 // For secure connection to CockroachDB
 const fs = require('fs');
@@ -8,7 +8,7 @@ const fs = require('fs');
 const path = require("path");
  
 // Connect to CockroachDB through Sequelize
-var sequelize = new Sequelize({
+const sequelize = new Sequelize({
   dialect: "postgres",
   username: "pripri99",
   password: "YqmXHAU05AOukdNdnSKfyg",
@@ -26,7 +26,7 @@ var sequelize = new Sequelize({
   logging: false, 
 });
 
-var DataTypes = Sequelize.DataTypes;
+const DataTypes = Sequelize.DataTypes;
 
 if (!Sequelize.supportsCockroachDB) {
   throw new Error("CockroachDB dialect for Sequelize not installed");
