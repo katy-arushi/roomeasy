@@ -69,6 +69,13 @@ h4 {
   font-size: 0.875rem;
 }
 
+p {
+  font-family: var(--ff-primary);
+  color: var(--clr-primary-2);
+  text-align: center;
+  font-size: 3rem;
+}
+
 #title {
   margin-top: 1rem;
 }
