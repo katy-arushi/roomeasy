@@ -4,4 +4,11 @@
   font-weight: bold;
   padding-right: 40px;
   padding-left: 40px;
+  border-radius: 5px;
+  height: 35px;
+  border-color: hsl(22, 71%, 71%);
+}
+
+.login-signup:hover {
+  background-color: #6BBCC7;
 }
