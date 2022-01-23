@@ -5,7 +5,7 @@ const bodyParser = require("body-parser");
 const logger = require("morgan");
 const port = process.env.PORT || 3001;
 
-const db = require('./models/index');
+const db = require('./models/index').sequelize;
 const User = db["User"];
 
 app.set("view engine", "ejs");
@@ -49,5 +49,25 @@ app.get('/q3', function(req, res) {
 
   // ------------------------------------ POST ROUTE HANDLERS --------------------------------------- //
 
+app.post("/signup", (req, res) => {
+  db.query(
+    `INSERT INTO users (first_name, last_name, password, email)
+      VALUES ($1, $2, $3, $4) returning *`, // insert register form values into db
+    [
+      req.body.first_name, // these are the register form values to insert into db
+      req.body.last_name,
+      req.body.password,
+      req.body.email,
+    ]
+  )
+    .then((data) => {
+      const user = data.rows[0]; // get the user, which is the first row of the results
+      res.redirect("/q1");
+    })
+    .catch((err) => {
+      console.error(err);
+      res.status(500).json({ error: err.message });
+    });
+});
 
 module.exports = app;

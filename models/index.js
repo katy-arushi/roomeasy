@@ -33,8 +33,11 @@ if (!Sequelize.supportsCockroachDB) {
 }
 
 module.exports.User = sequelize.define('User', {
-  name: DataTypes.STRING,
-  time: DataTypes.STRING
+  userID: DataTypes.INTEGER,
+  first_name: DataTypes.STRING,
+  last_name: DataTypes.STRING,
+  password: DataTypes.STRING,
+  email: DataTypes.STRING
 }, {
   timestamps: false
 });
