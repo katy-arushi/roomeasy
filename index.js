@@ -1,3 +1,6 @@
+
+
+
 const express = require("express");
 const app = express();
 const cors = require("cors");
@@ -5,14 +8,15 @@ const bodyParser = require("body-parser");
 const logger = require("morgan");
 const port = process.env.PORT || 3001;
 
-const db = require('./models/index').sequelize;
+const db = require('./models/index');
 const User = db["User"];
 
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(logger('dev'));
 app.use(cors());
-app.use(bodyParser.urlencoded({ extended: true }));
+// app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.use('/user', require('./routes/user'));
@@ -75,25 +79,58 @@ app.get('/q10', function(req, res) {
   res.render('q10');
 });
 
-app.post("/signup", (req, res) => {
-  db.query(
-    `INSERT INTO users(first_name, last_name, password, email)
-      VALUES($1, $2, $3, $4) returning *`, // insert register form values into db
-    [
-      req.body.first_name, // these are the register form values to insert into db
-      req.body.last_name,
-      req.body.password,
-      req.body.email,
-    ]
-  )
-    .then((data) => {
-      const user = data.rows[0]; // get the user, which is the first row of the results
-      res.redirect("/q1");
-    })
-    .catch((err) => {
-      console.error(err);
-      res.status(500).json({ error: err.message });
-    });
+// app.post("/signup", (req, res) => {
+//   db.query(
+//     `INSERT INTO users(first_name, last_name, password, email)
+//       VALUES($1, $2, $3, $4) returning *`, // insert register form values into db
+//     [
+//       req.body.first_name, // these are the register form values to insert into db
+//       req.body.last_name,
+//       req.body.password,
+//       req.body.email,
+//     ]
+//   )
+//     .then((data) => {
+//       const user = data.rows[0]; // get the user, which is the first row of the results
+//       res.redirect("/q1");
+//     })
+//     .catch((err) => {
+//       console.error(err);
+//       res.status(500).json({ error: err.message });
+//     });
+// });
+app.post('/signup', function (req, res) {
+ 
+  //Get our values submitted from the form
+    
+  var firstName = req.body.first_name;
+  var lastName  = req.body.last_name;
+  var password = req.body.password;
+  var email = req.body.email;
+
+  //Add our POST data to CockroachDB via Sequelize
+  User.sync({
+      force: false,
+  })
+      .then(function () {
+      // Insert new data into People table
+      return User.bulkCreate([
+          {
+          fname : firstName,
+          lname : lastName,
+          pass : password,
+          ema :email,
+          },
+      ]);
+      })
+
+      //Error handling for database errors
+      .catch(function (err) {
+      console.error("error: " + err.message);
+      });    
+      
+      //Tell them it was a success
+      res.send('Submitted Successfully!<br /> Name:  ' + firstName + '<br />Phone:  ' + email);
 });
   
 module.exports = app;
