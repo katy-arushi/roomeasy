@@ -1,0 +1,55 @@
+@import "layout.css";
+
+.login-tagline {
+  color: var(--clr-primary-2);
+  font-family: var(--ff-secondary);
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 25px;
+  margin-top: 10px;
+}
+
+.email-password {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 25px;
+}
+
+.email {
+  display: flex;
+  flex-direction: row;
+}
+
+.password {
+  display: flex;
+  flex-direction: row;
+}
+
+.login-form-label {
+  font-size: 25px;
+}
+
+#email {
+  margin-left: 92px;
+}
+
+#password {
+  margin-left: 65px
+}
+
+#first-name {
+  margin-left: 53px;
+}
+
+#last-name {
+  margin-left: 54px;
+}
+
+#student-id {
+  margin-left: 55px;
+}
+
+#confirm-password {
+  margin-left: 5px;
+}
