@@ -26,32 +26,15 @@ app.get('/', (req, res) => {
   res.render("homepage");
 });
 
-app.get('/profile', function(req, res) {
-  res.render('profile');
+app.get('/q1', function(req, res) {
+  res.render('q1');
 });
 
-
-
-app.get('/createUser', function(req, res, next) {
-  //res.type("text/plain");
-  //res.send('Node.js Sequelize test server');
-  res.render('createUser');
+app.get('/q2', function(req, res) {
+  res.render('q2');
 });
 
-
-app.get('/displayUser', async (req, res, next) => {
-  //res.type("text/plain");
-  //res.send('Node.js Sequelize test server');
-  try {
-
-    const users = await User.findAll();
-    console.log(users.every(user => user instanceof User)); // true
-    console.log("All client:", JSON.stringify(users, null, 2));
-    res.render('displayUser', { users });
-  } catch (e) {
-    next(e);
-  }
+app.get('/q3', function(req, res) {
+  res.render('q3');
 });
-
-
 module.exports = app;
