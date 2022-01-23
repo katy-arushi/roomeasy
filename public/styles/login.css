@@ -5,6 +5,35 @@
   font-family: var(--ff-secondary);
   font-size: 20px;
   text-align: center;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
   margin-top: 10px;
+}
+
+.email-password {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 25px;
+}
+
+.email {
+  display: flex;
+  flex-direction: row;
+}
+
+.password {
+  display: flex;
+  flex-direction: row;
+}
+
+.login-form-label {
+  font-size: 25px;
+}
+
+#email {
+  margin-left: 37px;
+}
+
+#password {
+  margin-left: 10px
 }
