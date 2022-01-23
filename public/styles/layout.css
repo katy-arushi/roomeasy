@@ -111,12 +111,12 @@ label {
 
 .form h3 {
   color: var(--clr-primary-2);
-  margin-bottom: 1.5rem;
+  margin-bottom: 2.5rem;
   text-align: center;
 }
 .form-control {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 #residence {
   padding: 0.25rem;

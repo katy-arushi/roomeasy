@@ -15,7 +15,6 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-
 app.use('/user', require('./routes/user'));
 
 app.listen(port, function () {
@@ -23,7 +22,15 @@ app.listen(port, function () {
 });
 
 app.get('/', (req, res) => {
-  res.render("homepage");
+  res.render("home2");
+});
+
+app.get('/signup', (req, res) => {
+  res.render("signUp");
+});
+
+app.get('/login', (req, res) => {
+  res.render("login");
 });
 
 app.get('/q1', function(req, res) {
@@ -37,4 +44,5 @@ app.get('/q2', function(req, res) {
 app.get('/q3', function(req, res) {
   res.render('q3');
 });
+
 module.exports = app;

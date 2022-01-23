@@ -4,13 +4,6 @@ const db = require('../models/index');
 const User = db["User"];
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('/homepage');
-});
-
-router.get('/signup', function(req, res, next) {
-  res.render('/signup');
-});
 
 router.get('/ping', function (req, res, next) {
   res.type("text/plain");
