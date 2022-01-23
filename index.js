@@ -1,5 +1,5 @@
 
-
+const Sequelize = require('sequelize-cockroachdb');
 
 const express = require("express");
 const app = express();
@@ -9,7 +9,8 @@ const logger = require("morgan");
 const port = process.env.PORT || 3001;
 
 const db = require('./models/index');
-const User = db["User"];
+const Client = db["Client"];
+const Account = db["Account"];
 
 app.set("view engine", "ejs");
 app.use(express.static("public"));
@@ -79,58 +80,65 @@ app.get('/q10', function(req, res) {
   res.render('q10');
 });
 
-// app.post("/signup", (req, res) => {
-//   db.query(
-//     `INSERT INTO users(first_name, last_name, password, email)
-//       VALUES($1, $2, $3, $4) returning *`, // insert register form values into db
-//     [
-//       req.body.first_name, // these are the register form values to insert into db
-//       req.body.last_name,
-//       req.body.password,
-//       req.body.email,
-//     ]
-//   )
-//     .then((data) => {
-//       const user = data.rows[0]; // get the user, which is the first row of the results
-//       res.redirect("/q1");
-//     })
-//     .catch((err) => {
-//       console.error(err);
-//       res.status(500).json({ error: err.message });
-//     });
+// // Define the Account model for the "accounts" table.
+// const Account = db.sequelize.define("accounts", {
+//   id: {
+//     type: Sequelize.INTEGER,
+//     primaryKey: true,
+//   },
+//   balance: {
+//     type: Sequelize.INTEGER,
+//   },
 // });
-app.post('/signup', function (req, res) {
- 
-  //Get our values submitted from the form
-    
+
+app.post("/signup", (req, res) => {
+
   var firstName = req.body.first_name;
   var lastName  = req.body.last_name;
-  var password = req.body.password;
-  var email = req.body.email;
+  var pass= req.body.password;
+  var mail = req.body.email;
 
-  //Add our POST data to CockroachDB via Sequelize
-  User.sync({
-      force: false,
+  // Create the "accounts" table.
+  Client.sync({
+    force: false,
   })
-      .then(function () {
-      // Insert new data into People table
-      return User.bulkCreate([
-          {
-          fname : firstName,
-          lname : lastName,
-          pass : password,
-          ema :email,
-          },
+    .then(function () {
+      // Insert two rows into the "accounts" table.
+      return Client.bulkCreate([
+        {
+          first_name : firstName,
+          last_name : lastName,
+          password : pass,
+          email : mail,
+        },
+        {
+          first_name : 'Lara',
+          last_name : 'Croft',
+          password : pass,
+          email : mail,
+        },
       ]);
-      })
-
-      //Error handling for database errors
-      .catch(function (err) {
-      console.error("error: " + err.message);
-      });    
+    })
+    .then(function () {
+      // Retrieve accounts.
+      return Client.findAll();
+    })
+    .then(function (clients) {
+      // Print out the balances.
+      clients.forEach(function (client) {
+        console.log(client.id + " " + client.first_name+ " " + client.last_name+ " " + client.email+ " " + client.password);
+        
+      });
+     // res.send('Submitted Successfully!<br /> Account:  '+ clients[0].id +'<br />balance:  ' + clients[0].balance);
+      res.send('Submitted Successfully!<br /> Name:  ' + clients[0].first_name + '<br />mail:  ' + clients[0].email+ '<br />lastname:  ' + clients[0].last_name);
       
-      //Tell them it was a success
-      res.send('Submitted Successfully!<br /> Name:  ' + firstName + '<br />Phone:  ' + email);
+      //process.exit(0);
+    })
+    .catch(function (err) {
+      console.error("error: " + err.message);
+      process.exit(1);
+    });
 });
+
   
 module.exports = app;

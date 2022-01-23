@@ -32,21 +32,31 @@ if (!Sequelize.supportsCockroachDB) {
   throw new Error("CockroachDB dialect for Sequelize not installed");
 }
 
-module.exports.User = sequelize.define('User', {
+module.exports.Client = sequelize.define('Client', {
   userID: DataTypes.INTEGER,
   first_name: DataTypes.STRING,
   last_name: DataTypes.STRING,
   password: DataTypes.STRING,
   email: DataTypes.STRING
-}, {
-  timestamps: false
+
 });
 
-module.exports.userToJSON = function(user) {
+/*module.exports.userToJSON = function(user) {
   return {
     name: user.name,
     time: user.time
   };
-};
+};*/
+
+// Define the Account model for the "accounts" table.
+module.exports.Account = sequelize.define("accounts", {
+  id: {
+    type: Sequelize.INTEGER,
+    primaryKey: true,
+  },
+  balance: {
+    type: Sequelize.INTEGER,
+  },
+});
 
 module.exports.sequelize = sequelize;
