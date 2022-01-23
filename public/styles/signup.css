@@ -31,9 +31,25 @@
 }
 
 #email {
-  margin-left: 37px;
+  margin-left: 92px;
 }
 
 #password {
-  margin-left: 10px
+  margin-left: 65px
+}
+
+#first-name {
+  margin-left: 53px;
+}
+
+#last-name {
+  margin-left: 54px;
+}
+
+#student-id {
+  margin-left: 55px;
+}
+
+#confirm-password {
+  margin-left: 5px;
 }

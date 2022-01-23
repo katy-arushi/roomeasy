@@ -21,6 +21,8 @@ app.listen(port, function () {
   console.log("Runnning on " + port);
 });
 
+  // -------------------------------------- GET ROUTE HANDLERS -------------------------------------- //
+
 app.get('/', (req, res) => {
   res.render("home2");
 });
@@ -69,4 +71,7 @@ app.get('/q9', function(req, res) {
   res.render('q9');
 });
 
+app.get('/q10', function(req, res) {
+  res.render('q10');
+});
 module.exports = app;

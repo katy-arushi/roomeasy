@@ -4,6 +4,7 @@
 <head>
   <title>Login</title>
   <%- include('partials/_head') %>
+  <link rel="stylesheet" href="/styles/login.css">
 </head>
 
 <body>
@@ -13,8 +14,14 @@
       <p class="login-tagline">Already have an account?<br>Log in now to view your roommate match!</p>
       <form action="/login" method="POST">
         <div class="email-password">
-          <input type="email" name="email" class="form-control" placeholder="Email address" arial-labe="Email">
-          <input type="password" name="password" class="form-control" placeholder="Password" arial-labe="Create password">
+          <div class="email-form">
+            <label class="login-form-label" for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Email address">
+          </div>
+          <div class="password-form">
+            <label class="login-form-label" for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Password">
+          </div>
         </div>
         <button type="submit" class="login-signup">Submit</button>
       </form>

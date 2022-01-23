@@ -122,10 +122,12 @@ label {
   margin-bottom: 2rem;
   text-align: center;
 }
+
 .form-control {
   display: flex;
   justify-content: space-evenly;
 }
+
 #residence {
   padding: 0.25rem;
   padding-left: 1rem;
