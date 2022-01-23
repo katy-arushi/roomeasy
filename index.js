@@ -116,10 +116,10 @@ app.post('/signup', function (req, res) {
       // Insert new data into People table
       return User.bulkCreate([
           {
-          fname : firstName,
-          lname : lastName,
-          pass : password,
-          ema :email,
+          first_name : firstName,
+          last_name : lastName,
+          password : password,
+          email :email,
           },
       ]);
       })
@@ -130,7 +130,7 @@ app.post('/signup', function (req, res) {
       });    
       
       //Tell them it was a success
-      res.send('Submitted Successfully!<br /> Name:  ' + firstName + '<br />Phone:  ' + email);
+      res.send('Submitted Successfully!<br /> Name:  ' + firstName + '<br />email:  ' + email);
 });
   
 module.exports = app;
