@@ -18,3 +18,11 @@ RoomEasy was made as part of [McHacks 9](https://www.mchacks.ca/) and built in 3
 ## Dependencies
 - Node 10.x or above
 - NPM 5.x or above
+- Body-Parser 1.19.1
+- Cors 2.8.5
+- EJS 3.1.6
+- Express 4.17.2
+- Morgan 1.10.0
+- Nodemon 2.0.15
+- Sequelize-CockroachDB 6.0.5
+- Sequelize 6.14.0
