@@ -1,7 +1,5 @@
-
 @import url("https://fonts.googleapis.com/css?family=Open+Sans|Dongle&display=swap");
 :root {
-  
   --clr-primary-1: #49a6e9;
   --clr-primary-2: hsl(22, 71%, 71%);
 
@@ -25,14 +23,13 @@
   --radius: 1rem;
   --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
- 
 }
-
 
 body {
   font-family: var(--ff-secondary);
   background: #6BBCC7;
-  background-image: url("https://www.transparenttextures.com/patterns/cartographer.png");  color: var(--clr-grey-1);
+  background-image: url("https://www.transparenttextures.com/patterns/cartographer.png");
+  color: var(--clr-grey-1);
   line-height: 1.5;
   font-size: 0.875rem;
 }
@@ -48,7 +45,6 @@ a:visited {
   background-color: transparent;
   text-decoration: none;
 }
-
 
 h1,
 h2,
@@ -77,11 +73,8 @@ h4 {
   margin-top: 1rem;
 }
 
-
-
 form {
   margin-left: 10px;
-
   text-align: center;
 }
 
@@ -98,8 +91,6 @@ label {
   font-size: 3rem;
 }
 
-
-
 .section-center {
   width: 90vw;
   margin: 0 auto;
@@ -113,7 +104,6 @@ label {
   transition: var(--transition);
   padding: 4rem;
 }
-
 
 .section-center:hover {
   box-shadow: var(--dark-shadow);
@@ -137,7 +127,6 @@ label {
   border-color: var(--clr-primary-2);
   font-size: 1rem;
   flex: 1 0 auto;
- 
 }
 
 .submit-btn {
@@ -156,6 +145,7 @@ label {
   transition: var(--transition);
   font-size: 0.85rem;
 }
+
 .submit-btn:hover {
   background: #6BBCC7;
   color: var(--clr-white);
@@ -182,13 +172,10 @@ label {
   background: #6BBCC7;
   color: var(--clr-white);
 }
-.prevbtn {
 
+.prevbtn {
   background: var(--clr-primary-2);
   border-color: transparent;
-
-
-
   padding: 0.25rem;
   text-transform: capitalize;
   letter-spacing: 2px;
@@ -204,8 +191,6 @@ label {
   margin: auto;
   background: var(--clr-primary-2);
   border-color: transparent;
-
-
   padding: 0.25rem;
   text-transform: capitalize;
   letter-spacing: 2px;
@@ -230,8 +215,3 @@ label {
 .buttons {
   text-align: center;
 }
-
-
-
-
-

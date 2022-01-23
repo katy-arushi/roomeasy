@@ -5,11 +5,11 @@ const User = db["User"];
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('pages/homepage');
+  res.render('/homepage');
 });
 
-router.get('/createUser', function(req, res, next) {
-  res.render('/createUser');
+router.get('/signup', function(req, res, next) {
+  res.render('/signup');
 });
 
 router.get('/ping', function (req, res, next) {
