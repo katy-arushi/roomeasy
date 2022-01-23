@@ -47,12 +47,38 @@ app.get('/q3', function(req, res) {
   res.render('q3');
 });
 
-  // ------------------------------------ POST ROUTE HANDLERS --------------------------------------- //
+app.get('/q4', function(req, res) {
+  res.render('q4');
+});
+
+app.get('/q5', function(req, res) {
+  res.render('q5');
+});
+  
+app.get('/q6', function(req, res) {
+  res.render('q6');
+});
+
+app.get('/q7', function(req, res) {
+  res.render('q7');
+});
+
+app.get('/q8', function(req, res) {
+  res.render('q8');
+});
+
+app.get('/q9', function(req, res) {
+  res.render('q9');
+});
+
+app.get('/q10', function(req, res) {
+  res.render('q10');
+});
 
 app.post("/signup", (req, res) => {
   db.query(
-    `INSERT INTO users (first_name, last_name, password, email)
-      VALUES ($1, $2, $3, $4) returning *`, // insert register form values into db
+    `INSERT INTO users(first_name, last_name, password, email)
+      VALUES($1, $2, $3, $4) returning *`, // insert register form values into db
     [
       req.body.first_name, // these are the register form values to insert into db
       req.body.last_name,
@@ -69,5 +95,5 @@ app.post("/signup", (req, res) => {
       res.status(500).json({ error: err.message });
     });
 });
-
+  
 module.exports = app;
