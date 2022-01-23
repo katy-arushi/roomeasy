@@ -1,5 +1,5 @@
 {
-  "name": "roommate-matcher",
+  "name": "roomeasy",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/katy-arushi/roommate-matcher.git"
+    "url": "git+https://github.com/katy-arushi/roomeasy"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/katy-arushi/roommate-matcher/issues"
+    "url": "https://github.com/katy-arushi/roomeasy/issues"
   },
-  "homepage": "https://github.com/katy-arushi/roommate-matcher#readme",
+  "homepage": "https://github.com/katy-arushi/roomeasy#readme",
   "dependencies": {
     "body-parser": "^1.19.1",
     "cors": "^2.8.5",
