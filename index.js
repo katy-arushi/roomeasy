@@ -5,6 +5,9 @@ const bodyParser = require("body-parser");
 const logger = require("morgan");
 const port = process.env.PORT || 3001;
 
+const db = require('./models/index');
+const User = db["User"];
+
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(logger('dev'));
@@ -13,6 +16,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 
+app.use('/user', require('./routes/user'));
 
 app.listen(port, function () {
   console.log("Runnning on " + port);

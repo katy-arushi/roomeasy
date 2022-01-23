@@ -2,29 +2,29 @@ var express = require('express');
 var models = require('../models');
 var router = express.Router();
 
-// GET all customers.
+// GET all users.
 router.get('/', function(req, res, next) {
-  models.Customer.findAll().then(function(customers) {
-    var result = customers.map(function(customer) {
-      return models.customerToJSON(customer);
+  models.User.findAll().then(function(users) {
+    var result = users.map(function(user) {
+      return models.userToJSON(user);
     });
     res.json(result);
   }).catch(next);
 });
 
-// POST a new customer.
+// POST a new user.
 router.post('/', function(req, res, next) {
   var c = {id: req.body.id, name: req.body.name};
-  models.Customer.create(c).then(function(customer) {
-    res.json(models.customerToJSON(customer));
+  models.User.create(c).then(function(user) {
+    res.json(models.userToJSON(user));
   }).catch(next);
 });
 
-// GET one customer.
+// GET one user.
 router.get('/:id', function(req, res, next) {
   var id = parseInt(req.params.id);
-  models.Customer.findById(id).then(function(customer) {
-    res.json(models.customerToJSON(customer));
+  models.User.findById(id).then(function(user) {
+    res.json(models.userToJSON(user));
   }).catch(next);
 });
 
