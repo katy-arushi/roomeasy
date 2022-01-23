@@ -132,7 +132,6 @@ h4 {
   color: var(--clr-white);
 }
 
-
-
-
-
+.link {
+  color: hsl(22, 71%, 71%)
+}

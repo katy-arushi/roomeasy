@@ -7,7 +7,6 @@ const fs = require('fs');
 
 const path = require("path");
  
-//var Sequelize = require('sequelize-cockroachdb');
 // Connect to CockroachDB through Sequelize
 const sequelize = new Sequelize({
   dialect: "postgres",
@@ -41,7 +40,6 @@ module.exports.User = sequelize.define('User', {
 });
 
 module.exports.userToJSON = function(user) {
-  //console.log(user)
   return {
     name: user.name,
     time: user.time
@@ -49,5 +47,3 @@ module.exports.userToJSON = function(user) {
 };
 
 module.exports.sequelize = sequelize;
-//module.exports.Sequelize = Sequelize;
-
